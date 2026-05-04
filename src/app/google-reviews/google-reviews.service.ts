@@ -33,29 +33,10 @@ interface GooglePlacesReviewResponse {
 
 const MOCK_REVIEWS_DATA: GoogleReviewsData = {
   businessName: "Del Sol HVAC LLC",
-  averageRating: 5.0,
-  reviewCount: 7,
+  averageRating: 0,
+  reviewCount: 0,
   googleBusinessUrl: environment.googleReviews.googleBusinessUrl,
-  reviews: [
-    {
-      authorName: "Javier 8a",
-      rating: 5,
-      highlight: "Professional, respectful, and easy to work with.",
-      text: "I had a great experience with this team, they came out to fix some A/C and plumbing issues at my home, and from the start they were professional, respectful, and easy to work with. They handled everything with care and attention to detail, and most importantly, everything was left working perfectly. More than just a service, it was a smooth and reassuring experience. Without a doubt, a team you can trust and one I would gladly hire again.",
-    },
-    {
-      authorName: "Milien Garcia",
-      rating: 5,
-      highlight: "Responded fast and handled everything professionally.",
-      text: "We had an urgent issue, and Del Sol HVAC LLC responded fast and handled everything professionally. They made a stressful situation much easier.",
-    },
-    {
-      authorName: "Nilvia Sanchez",
-      rating: 5,
-      highlight: "Their response was prompt and reliable.",
-      text: "I contacted Del Sol HVAC LLC for an urgent issue, and their response was prompt and reliable. They quickly identified the problem and resolved it effectively. Their professionalism, reliability, and quality of work stood out.",
-    },
-  ],
+  reviews: [],
 };
 
 @Injectable({ providedIn: "root" })

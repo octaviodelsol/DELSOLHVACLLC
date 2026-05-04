@@ -4,7 +4,7 @@
       <div class="reviews-heading">
         <p class="section-kicker">Google Reviews</p>
         @if (status === "loaded" && reviewsData) {
-          <p class="rating-headline">5.0 Rating on Google</p>
+          <p class="rating-headline">{{ reviewsData.averageRating }} Rating on Google</p>
           <h2 id="google-reviews-title">Trusted by customers for fast, reliable HVAC service.</h2>
           <p>See a few of the strongest comments about speed, reliability, and results from Google reviews.</p>
         } @else {
@@ -79,12 +79,12 @@
     } @else if (status === "empty") {
       <div class="feedback-card" aria-live="polite">
         <strong>Google reviews will show here once they are available.</strong>
-        <p>The component is ready for live Places data or mock review content.</p>
+        <p>The component is ready for verified live Places data when it is configured.</p>
       </div>
     } @else {
       <div class="feedback-card" aria-live="assertive">
         <strong>Google reviews could not be loaded right now.</strong>
-        <p>Check the Google reviews config or keep using mock mode until API setup is ready.</p>
+        <p>Check the Google reviews config before showing this section.</p>
         <button mat-stroked-button type="button" class="retry-btn" (click)="loadReviews()">
           Try Again
         </button>

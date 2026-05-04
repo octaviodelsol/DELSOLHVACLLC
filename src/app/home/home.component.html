@@ -1,99 +1,124 @@
 <div class="home-page">
-  <section class="hero-section">
-    <div class="hero-copy">
-      <p class="eyebrow">{{ language.current() === 'es' ? 'Servicio HVAC residencial y comercial' : 'Residential and commercial HVAC service' }}</p>
-      <h1>{{ language.current() === 'es' ? 'Mantenga su espacio fresco, comodo y confiable.' : 'Keep your space cool, comfortable, and reliable.' }}</h1>
+  <section class="hero-section" aria-labelledby="home-hero-title">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="eyebrow">
+        {{ language.current() === 'es' ? 'Servicio de A/C en Miami y areas cercanas' : 'AC service in Miami and surrounding areas' }}
+      </p>
+      <h1 id="home-hero-title">
+        {{ language.current() === 'es' ? 'Reparacion de A/C rapida y confiable en el area de Miami' : 'Fast & Reliable AC Repair in the Miami Area' }}
+      </h1>
       <p class="hero-text">
         {{ language.current() === 'es'
-          ? 'Del Sol HVAC LLC ofrece instalacion de A/C, reparacion, mantenimiento preventivo y servicio confiable cuando el confort importa.'
-          : 'Del Sol HVAC LLC provides A/C installation, repair, preventive maintenance, and dependable service when comfort matters.' }}
+          ? 'Servicio el mismo dia, precios honestos y soluciones HVAC profesionales.'
+          : 'Same-day service, honest pricing, and professional HVAC solutions' }}
       </p>
-
       <div class="hero-actions">
-        <!-- Quote flow paused while service requests are handled through the floating WhatsApp button.
-        <a mat-flat-button class="primary-btn" routerLink="/get-a-quote">
-          <span>Request HVAC Service</span>
-          <mat-icon aria-hidden="true">arrow_forward</mat-icon>
+        <a mat-flat-button class="primary-btn call-btn" [href]="phoneHref">
+          <mat-icon aria-hidden="true">call</mat-icon>
+          {{ language.current() === 'es' ? 'Llamar ahora' : 'Call Now' }}
         </a>
-        -->
-        <a mat-stroked-button class="secondary-btn" routerLink="/services">
-          {{ language.current() === 'es' ? 'Ver servicios HVAC' : 'View HVAC Services' }}
+        <a mat-stroked-button class="secondary-btn" routerLink="/contact">
+          {{ language.current() === 'es' ? 'Estimado gratis' : 'Get Free Estimate' }}
         </a>
-      </div>
-
-      <div class="hero-points" aria-label="Key trust points">
-        @for (point of heroPoints; track point) {
-          <div class="hero-point">
-            <mat-icon>check_circle</mat-icon>
-            <span>{{ point }}</span>
-          </div>
-        }
-      </div>
-    </div>
-
-    <div class="hero-visual" [attr.aria-label]="language.current() === 'es' ? 'Equipo de servicio de Del Sol HVAC trabajando' : 'Del Sol HVAC service team in action'">
-      <div class="hero-card hero-card-primary">
-        <img
-          src="assets/hvac-technician-hero.png"
-          [attr.alt]="language.current() === 'es' ? 'Tecnico de Del Sol HVAC reparando una unidad exterior de A/C' : 'Del Sol HVAC technician repairing an outdoor A/C unit'"
-          loading="eager"
-          fetchpriority="high"
-          decoding="async"
-        />
       </div>
     </div>
   </section>
 
-  <section class="content-section services-section">
-    <div class="services-copy">
-      <p class="section-kicker">{{ language.current() === 'es' ? 'Servicios principales' : 'Services at a glance' }}</p>
-      <h2>{{ language.current() === 'es' ? 'Servicios HVAC para hogares y negocios' : 'HVAC services for homes and businesses' }}</h2>
-      <p>
-        {{ language.current() === 'es'
-          ? 'Desde instalacion y reparacion de A/C hasta mantenimiento preventivo, ayudamos a mantener sistemas residenciales y comerciales funcionando con confianza.'
-          : 'From A/C installation and repair to preventive maintenance, we help keep residential and commercial systems running with confidence.' }}
-      </p>
-      <a mat-flat-button class="primary-btn" routerLink="/contact">
-        {{ language.current() === 'es' ? 'Contactar a Del Sol HVAC' : 'Call Del Sol HVAC' }}
-      </a>
+  <section class="trust-bar" [attr.aria-label]="language.current() === 'es' ? 'Señales de confianza' : 'Trust signals'">
+    @for (item of trustItems; track item.label) {
+      <div class="trust-item">
+        <mat-icon aria-hidden="true">{{ item.icon }}</mat-icon>
+        <span>{{ item.label }}</span>
+      </div>
+    }
+  </section>
+
+  <section class="section-block" id="services" aria-labelledby="services-title">
+    <div class="section-heading">
+      <p class="section-kicker">{{ language.current() === 'es' ? 'Servicios' : 'Services' }}</p>
+      <h2 id="services-title">
+        {{ language.current() === 'es' ? 'Soluciones claras para su sistema de A/C' : 'Clear solutions for your AC system' }}
+      </h2>
     </div>
 
-    <div class="services-panel">
-      @for (service of services; track service) {
-        <div class="service-row">
-          <div class="service-icon">
-            <mat-icon>{{ service.icon }}</mat-icon>
+    <div class="service-grid">
+      @for (service of services; track service.title) {
+        <article class="service-card">
+          <div class="card-icon">
+            <mat-icon aria-hidden="true">{{ service.icon }}</mat-icon>
           </div>
-          <span>{{ service.label }}</span>
-        </div>
+          <h3>{{ service.title }}</h3>
+          <p>{{ service.description }}</p>
+        </article>
       }
     </div>
   </section>
 
-  <section class="final-cta">
-    <div>
-      <p class="section-kicker">{{ language.current() === 'es' ? 'Necesita ayuda HVAC?' : 'Need HVAC help?' }}</p>
-      <h2>{{ language.current() === 'es' ? 'Envienos los detalles por WhatsApp.' : 'Send us your HVAC details on WhatsApp.' }}</h2>
+  <section class="section-block split-section" aria-labelledby="why-title">
+    <div class="section-heading compact-heading">
+      <p class="section-kicker">{{ language.current() === 'es' ? 'Por que elegirnos' : 'Why Choose Us' }}</p>
+      <h2 id="why-title">
+        {{ language.current() === 'es' ? 'Servicio local con comunicacion clara' : 'Local service with clear communication' }}
+      </h2>
       <p>
         {{ language.current() === 'es'
-          ? 'Comparta su direccion, el problema y el horario preferido. Le responderemos con el proximo paso.'
-          : 'Share your address, issue, and preferred timing. We will reply with the next step.' }}
+          ? 'Sin promesas infladas. Solo respuesta profesional, precios claros y trabajo enfocado en resolver el problema.'
+          : 'No inflated claims. Just professional response, clear pricing, and work focused on solving the problem.' }}
       </p>
     </div>
-    <a
-      mat-flat-button
-      class="whatsapp-cta-btn"
-      href="https://wa.me/17866013264"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      <mat-icon aria-hidden="true">chat</mat-icon>
-      {{ language.current() === 'es' ? 'Escribanos' : 'WhatsApp Us' }}
-    </a>
-    <!-- Quote flow paused while service requests are handled through the floating WhatsApp button.
-    <a mat-flat-button class="primary-btn" routerLink="/get-a-quote">
-      Request a Quote
-    </a>
-    -->
+
+    <div class="reason-grid">
+      @for (reason of reasons; track reason.title) {
+        <article class="reason-card">
+          <mat-icon aria-hidden="true">{{ reason.icon }}</mat-icon>
+          <div>
+            <h3>{{ reason.title }}</h3>
+            <p>{{ reason.description }}</p>
+          </div>
+        </article>
+      }
+    </div>
   </section>
+
+  <section class="section-block process-section" aria-labelledby="process-title">
+    <div class="section-heading center-heading">
+      <p class="section-kicker">{{ language.current() === 'es' ? 'Proceso' : 'Process' }}</p>
+      <h2 id="process-title">
+        {{ language.current() === 'es' ? 'Que esperar cuando nos contacta' : 'What to expect when you contact us' }}
+      </h2>
+    </div>
+
+    <div class="process-grid">
+      @for (step of steps; track step.title; let index = $index) {
+        <article class="process-card">
+          <span>{{ index + 1 }}</span>
+          <h3>{{ step.title }}</h3>
+          <p>{{ step.description }}</p>
+        </article>
+      }
+    </div>
+  </section>
+
+  <section class="cta-section" aria-labelledby="cta-title">
+    <div>
+      <p class="section-kicker">{{ language.current() === 'es' ? 'Servicio de A/C hoy' : 'AC service today' }}</p>
+      <h2 id="cta-title">{{ language.current() === 'es' ? 'Necesita reparacion de A/C hoy?' : 'Need AC Repair Today?' }}</h2>
+      <p>{{ language.current() === 'es' ? 'Llame ahora o pida un estimado gratis.' : 'Call now or request a free estimate.' }}</p>
+    </div>
+    <div class="cta-actions">
+      <a mat-flat-button class="primary-btn" [href]="phoneHref">
+        <mat-icon aria-hidden="true">call</mat-icon>
+        (786) 601-3264
+      </a>
+      <a mat-stroked-button class="secondary-btn light-btn" routerLink="/contact">
+        {{ language.current() === 'es' ? 'Pedir estimado' : 'Get Estimate' }}
+      </a>
+    </div>
+  </section>
+
+  <a class="sticky-call" [href]="phoneHref">
+    <mat-icon aria-hidden="true">call</mat-icon>
+    {{ language.current() === 'es' ? 'Llamar ahora' : 'Call Now' }}
+  </a>
 </div>

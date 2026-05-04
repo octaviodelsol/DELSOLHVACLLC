@@ -19,125 +19,70 @@ import { LanguageService } from "../language.service";
 export class HomeComponent {
   constructor(readonly language: LanguageService) {}
 
-  get heroPoints(): string[] {
+  readonly phoneHref = "tel:+17866013264";
+  readonly whatsappHref = "https://wa.me/17866013264";
+
+  get trustItems(): Array<{ icon: string; label: string }> {
     return this.language.current() === 'es'
       ? [
-          "Instalacion, reparacion y mantenimiento preventivo de A/C",
-          "Servicio HVAC residencial y comercial",
-          "Precios claros, comunicacion y proximos pasos",
+          { icon: "verified_user", label: "Licenciado y asegurado" },
+          { icon: "bolt", label: "Servicio el mismo dia disponible" },
+          { icon: "location_on", label: "Sirviendo Miami y areas cercanas" },
+          { icon: "request_quote", label: "Estimados gratis" },
         ]
       : [
-          "A/C installation, repair, and preventive maintenance",
-          "Residential and commercial HVAC support",
-          "Clear pricing, communication, and next steps",
+          { icon: "verified_user", label: "Licensed & Insured" },
+          { icon: "bolt", label: "Same-Day Service Available" },
+          { icon: "location_on", label: "Serving Miami & Surrounding Areas" },
+          { icon: "request_quote", label: "Free Estimates" },
         ];
   }
 
-  readonly metrics = [
-    { value: "A/C", label: "installation and repair service" },
-    { value: "PM", label: "preventive maintenance support" },
-    { value: "R+C", label: "residential and commercial work" },
-  ];
-
-  readonly proofItems = [
-    {
-      icon: "schedule",
-      title: "Respond quickly",
-      description: "Get your A/C or HVAC concern moving toward a practical solution.",
-    },
-    {
-      icon: "verified_user",
-      title: "Know what is happening",
-      description: "Get clear scope, pricing, and next steps before work moves forward.",
-    },
-    {
-      icon: "apartment",
-      title: "Homes and businesses",
-      description: "Support for residential comfort needs and commercial HVAC priorities.",
-    },
-    {
-      icon: "support_agent",
-      title: "Professional follow-through",
-      description: "Responsive service that helps you feel informed and in control.",
-    },
-  ];
-
-  readonly trustStats = [
-    { value: "5.0", label: "customer-rated service experience" },
-    { value: "786", label: "call 786-601-3264 for service" },
-    { value: "HVAC", label: "cooling, comfort, and reliability" },
-  ];
-
-  readonly benefits = [
-    {
-      icon: "bolt",
-      title: "Quick response when comfort is on the line",
-      description: "Move from HVAC concern to action with a team focused on practical service.",
-    },
-    {
-      icon: "chat",
-      title: "Clear communication from the start",
-      description: "Clear scope, communication, and next steps help you understand the work before it begins.",
-    },
-    {
-      icon: "fact_check",
-      title: "Work that supports long-term reliability",
-      description: "Preventive maintenance and dependable repairs help your HVAC system perform when you need it.",
-    },
-  ];
-
-  readonly sectionPoints = [
-    "Comfort-focused service for homes and businesses",
-    "Clear updates without constant follow-up",
-    "Reliable support for urgent repairs and maintenance",
-  ];
-
-  readonly steps = [
-    {
-      title: "Send the system and service details",
-      description:
-        "Tell us the property, the HVAC service needed, and your timeline through the quote form.",
-    },
-    {
-      title: "Review clear next steps",
-      description:
-        "We follow up with straightforward pricing, scope, and next steps.",
-    },
-    {
-      title: "Get the service moving",
-      description:
-        "Our team handles the work so you can get back to a comfortable, reliable space.",
-    },
-  ];
-
-  get services(): Array<{ icon: string; label: string }> {
+  get services(): Array<{ icon: string; title: string; description: string }> {
     return this.language.current() === 'es'
       ? [
-          { icon: "ac_unit", label: "Instalacion y reemplazo de A/C" },
-          { icon: "build", label: "Reparacion y diagnostico de A/C" },
-          { icon: "event_repeat", label: "Mantenimiento preventivo" },
-          { icon: "home", label: "Servicio HVAC residencial" },
-          { icon: "business", label: "Servicio HVAC comercial" },
+          { icon: "build", title: "Reparacion de A/C", description: "Diagnostico y reparacion para restaurar el enfriamiento rapido." },
+          { icon: "ac_unit", title: "Instalacion de A/C", description: "Reemplazos e instalaciones con opciones claras para su espacio." },
+          { icon: "event_repeat", title: "Mantenimiento", description: "Servicio preventivo para ayudar a evitar problemas costosos." },
+          { icon: "air", title: "Ductos", description: "Soporte para flujo de aire, ductos y eficiencia del sistema." },
         ]
       : [
-          { icon: "ac_unit", label: "A/C installation and replacement" },
-          { icon: "build", label: "A/C repair and troubleshooting" },
-          { icon: "event_repeat", label: "Preventive maintenance" },
-          { icon: "home", label: "Residential HVAC service" },
-          { icon: "business", label: "Commercial HVAC service" },
+          { icon: "build", title: "AC Repair", description: "Troubleshooting and repair to restore cooling fast." },
+          { icon: "ac_unit", title: "AC Installation", description: "System replacements and installs with clear options." },
+          { icon: "event_repeat", title: "Maintenance", description: "Preventive service to help avoid costly breakdowns." },
+          { icon: "air", title: "Duct Work", description: "Airflow, duct, and comfort support for better performance." },
         ];
   }
 
-  readonly faqs = [
-    {
-      question: "Who is Del Sol HVAC LLC for?",
-      answer:
-        "We work with homeowners and businesses that need A/C installation, repair, preventive maintenance, or reliable HVAC support.",
-    },
-    {
-      question: "What makes your service different?",
-      answer:
-        "We focus on comfort, clear communication, and dependable follow-through so customers understand the service and next steps.",
-    },
-  ];
+  get reasons(): Array<{ icon: string; title: string; description: string }> {
+    return this.language.current() === 'es'
+      ? [
+          { icon: "speed", title: "Respuesta rapida", description: "Priorizamos llamadas urgentes de A/C cuando el confort no puede esperar." },
+          { icon: "payments", title: "Precios honestos", description: "Explicamos el trabajo y las opciones antes de avanzar." },
+          { icon: "engineering", title: "Tecnicos con experiencia", description: "Servicio profesional para reparacion, instalacion y mantenimiento." },
+          { icon: "home_pin", title: "Local y confiable", description: "Servicio HVAC para Miami, Hialeah y comunidades cercanas." },
+        ]
+      : [
+          { icon: "speed", title: "Fast Response Times", description: "We prioritize urgent AC calls when comfort cannot wait." },
+          { icon: "payments", title: "Honest Pricing", description: "We explain the work and your options before moving forward." },
+          { icon: "engineering", title: "Experienced Technicians", description: "Professional service for repairs, installs, and maintenance." },
+          { icon: "home_pin", title: "Local & Reliable", description: "HVAC support for Miami, Hialeah, and surrounding communities." },
+        ];
+  }
+
+  get steps(): Array<{ title: string; description: string }> {
+    return this.language.current() === 'es'
+      ? [
+          { title: "Llame o pida un estimado", description: "Comparta su direccion, problema y horario preferido." },
+          { title: "Agendamos la visita", description: "Coordinamos una hora conveniente y confirmamos los detalles." },
+          { title: "Solucionamos el problema", description: "Revisamos el sistema y realizamos el servicio aprobado." },
+          { title: "Disfrute el confort", description: "Su espacio vuelve a sentirse fresco, comodo y confiable." },
+        ]
+      : [
+          { title: "Call or Request a Quote", description: "Share your address, issue, and preferred timing." },
+          { title: "Schedule Appointment", description: "We coordinate a convenient visit and confirm the details." },
+          { title: "We Fix the Problem", description: "We inspect the system and complete the approved service." },
+          { title: "Enjoy Comfort Again", description: "Your space gets back to feeling cool, comfortable, and reliable." },
+        ];
+  }
 }

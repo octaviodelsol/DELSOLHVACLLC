@@ -177,7 +177,7 @@
   max-width: var(--content-width);
   margin: 0 auto;
   width: 100%;
-  padding: 28px 24px 72px;
+  padding: 28px 24px 28px;
 }
 
 .whatsapp-float {
@@ -216,7 +216,7 @@
 
 .site-footer {
   border-top: 1px solid var(--line);
-  background: color-mix(in srgb, var(--surface) 72%, transparent);
+  background: color-mix(in srgb, var(--surface) 84%, var(--bg));
 }
 
 .footer-inner {
@@ -297,7 +297,7 @@
   }
 
   .app-shell {
-    padding: 20px 16px 56px;
+    padding: 20px 16px 22px;
   }
 
   .whatsapp-float {
