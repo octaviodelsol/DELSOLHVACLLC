@@ -32,7 +32,7 @@ interface GooglePlacesReviewResponse {
 }
 
 const MOCK_REVIEWS_DATA: GoogleReviewsData = {
-  businessName: "Local Service Co",
+  businessName: "Del Sol HVAC LLC",
   averageRating: 5.0,
   reviewCount: 7,
   googleBusinessUrl: environment.googleReviews.googleBusinessUrl,
@@ -47,13 +47,13 @@ const MOCK_REVIEWS_DATA: GoogleReviewsData = {
       authorName: "Milien Garcia",
       rating: 5,
       highlight: "Responded fast and handled everything professionally.",
-      text: "We had an urgent issue, and Local Service Co responded fast and handled everything professionally. They made a stressful situation much easier.",
+      text: "We had an urgent issue, and Del Sol HVAC LLC responded fast and handled everything professionally. They made a stressful situation much easier.",
     },
     {
       authorName: "Nilvia Sanchez",
       rating: 5,
       highlight: "Their response was prompt and reliable.",
-      text: "I contacted Local Service Co for an urgent issue, and their response was prompt and reliable. They quickly identified the problem and resolved it effectively. Their professionalism, reliability, and quality of work stood out.",
+      text: "I contacted Del Sol HVAC LLC for an urgent issue, and their response was prompt and reliable. They quickly identified the problem and resolved it effectively. Their professionalism, reliability, and quality of work stood out.",
     },
   ],
 };

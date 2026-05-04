@@ -3,17 +3,17 @@
   display: grid;
   place-items: center;
   padding: 2rem 1rem;
-  background: linear-gradient(180deg, #f8fbf9 0%, #ffffff 100%);
+  background: linear-gradient(180deg, var(--brand-cream) 0%, var(--bg) 100%);
 }
 
 .confirmation-card {
   width: min(560px, 100%);
   text-align: center;
-  background: #ffffff;
-  border: 1px solid #e5ece7;
+  background: var(--surface-strong);
+  border: 1px solid var(--line);
   border-radius: 16px;
   padding: 2rem 1.5rem;
-  box-shadow: 0 10px 30px rgba(13, 61, 35, 0.08);
+  box-shadow: var(--shadow-lg);
 }
 
 .success-icon {
@@ -23,8 +23,8 @@
   border-radius: 999px;
   display: grid;
   place-items: center;
-  background: #1e8e4b;
-  color: #ffffff;
+  background: var(--action-bg);
+  color: #fff;
 }
 
 .success-icon svg {
@@ -34,14 +34,14 @@
 
 h1 {
   margin: 0 0 0.65rem;
-  color: #133b24;
+  color: var(--heading);
   font-size: clamp(1.5rem, 3.2vw, 1.9rem);
   line-height: 1.2;
 }
 
 p {
   margin: 0;
-  color: #3f5347;
+  color: var(--text-muted);
   font-size: 1.03rem;
   line-height: 1.6;
 }

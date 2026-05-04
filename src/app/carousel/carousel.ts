@@ -24,23 +24,23 @@ export class CarouselComponent {
   images: CarouselImage[] = [
     {
       src: 'assets/images/moving1.jpg',
-      alt: 'Slide 1',
-      caption: 'Professional Move-Out Cleaning'
+      alt: 'HVAC service work',
+      caption: 'A/C Installation & Repair'
     },
     {
       src: 'assets/images/moving2.png',
-      alt: 'Slide 2',
-      caption: 'Move-In Ready Properties'
+      alt: 'HVAC maintenance support',
+      caption: 'Preventive Maintenance'
     },
     {
       src: 'assets/images/moving3.jpg',
-      alt: 'Slide 3',
-      caption: 'Expert Property Staging'
+      alt: 'Residential HVAC support',
+      caption: 'Residential Comfort'
     },
     {
       src: 'assets/images/moving4.jpg',
-      alt: 'Slide 4',
-      caption: 'Fast & Reliable Service'
+      alt: 'Commercial HVAC service',
+      caption: 'Commercial HVAC Service'
     }
   ];
 }

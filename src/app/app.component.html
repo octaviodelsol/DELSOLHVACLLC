@@ -1,29 +1,50 @@
 <header class="site-header">
   <div class="header-inner">
-    <a class="brand" routerLink="/" aria-label="Local Service Co home">
+    <a class="brand" routerLink="/" aria-label="Del Sol HVAC LLC home">
       <img
-        [src]="isDarkMode ? 'assets/logo_white.png' : 'assets/logo.png'"
-        alt="Local Service Co logo"
+        src="assets/logo.png"
+        alt="Del Sol HVAC LLC logo"
         class="brand-logo"
         decoding="async"
       />
       <div class="brand-copy">
-        <span class="brand-name">Local Service Co</span>
-        <span class="brand-tagline">Fast local service without the scramble</span>
+        <span class="brand-name">Del Sol HVAC LLC</span>
+        <span class="brand-tagline">{{ language.current() === 'es' ? 'Enfriamiento, confort y confianza' : 'Cooling, comfort, reliability' }}</span>
       </div>
     </a>
 
     <div class="header-controls">
-      <button
-        type="button"
-        class="theme-toggle"
-        (click)="toggleTheme()"
-        [attr.aria-pressed]="isDarkMode"
-        [attr.aria-label]="isDarkMode ? 'Switch to light mode' : 'Switch to dark mode'"
-      >
-        <mat-icon>{{ isDarkMode ? 'light_mode' : 'dark_mode' }}</mat-icon>
-        <span>{{ isDarkMode ? 'Light' : 'Dark' }}</span>
-      </button>
+      <div class="preference-controls">
+        <button
+          type="button"
+          class="theme-toggle"
+          (click)="toggleTheme()"
+          [attr.aria-pressed]="isDarkMode"
+          [attr.aria-label]="isDarkMode ? 'Switch to light mode' : 'Switch to dark mode'"
+        >
+          <mat-icon>{{ isDarkMode ? 'light_mode' : 'dark_mode' }}</mat-icon>
+          <span>{{ isDarkMode ? (language.current() === 'es' ? 'Claro' : 'Light') : (language.current() === 'es' ? 'Oscuro' : 'Dark') }}</span>
+        </button>
+
+        <div class="language-toggle" role="group" [attr.aria-label]="language.current() === 'es' ? 'Seleccionar idioma' : 'Select language'">
+          <button
+            type="button"
+            [class.active]="language.current() === 'en'"
+            [attr.aria-pressed]="language.current() === 'en'"
+            (click)="setLanguage('en')"
+          >
+            EN
+          </button>
+          <button
+            type="button"
+            [class.active]="language.current() === 'es'"
+            [attr.aria-pressed]="language.current() === 'es'"
+            (click)="setLanguage('es')"
+          >
+            ES
+          </button>
+        </div>
+      </div>
 
       <button
         type="button"
@@ -31,7 +52,7 @@
         (click)="toggleMobileMenu()"
         [attr.aria-expanded]="mobileMenuOpen"
         aria-controls="primary-nav"
-        aria-label="Toggle navigation menu"
+        [attr.aria-label]="language.current() === 'es' ? 'Abrir menu de navegacion' : 'Toggle navigation menu'"
       >
         <mat-icon>{{ mobileMenuOpen ? 'close' : 'menu' }}</mat-icon>
       </button>
@@ -43,12 +64,14 @@
       [class.open]="mobileMenuOpen"
       aria-label="Primary"
     >
-      <a mat-button routerLink="/about" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="closeMobileMenu()">About</a>
-      <a mat-button routerLink="/services" routerLinkActive="active" (click)="closeMobileMenu()">Services</a>
-      <a mat-button routerLink="/contact" routerLinkActive="active" (click)="closeMobileMenu()">Contact</a>
+      <a mat-button routerLink="/about" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="closeMobileMenu()">{{ language.current() === 'es' ? 'Nosotros' : 'About' }}</a>
+      <a mat-button routerLink="/services" routerLinkActive="active" (click)="closeMobileMenu()">{{ language.current() === 'es' ? 'Servicios' : 'Services' }}</a>
+      <a mat-button routerLink="/contact" routerLinkActive="active" (click)="closeMobileMenu()">{{ language.current() === 'es' ? 'Contacto' : 'Contact' }}</a>
+      <!-- Quote flow paused while service requests are handled through the floating WhatsApp button.
       <a class="header-cta" mat-flat-button routerLink="/get-a-quote" routerLinkActive="active" (click)="closeMobileMenu()">
         Request a Quote
       </a>
+      -->
     </nav>
   </div>
 </header>
@@ -57,53 +80,22 @@
   <router-outlet></router-outlet>
 </main>
 
+<a
+  class="whatsapp-float"
+  href="https://wa.me/17868869603"
+  target="_blank"
+  rel="noopener noreferrer"
+  [attr.aria-label]="language.current() === 'es' ? 'Chatea con Del Sol HVAC LLC por WhatsApp' : 'Chat with Del Sol HVAC LLC on WhatsApp'"
+>
+  <svg viewBox="0 0 32 32" aria-hidden="true">
+    <path d="M16 3.2A12.7 12.7 0 0 0 5.1 22.4L3.6 28.8l6.6-1.5A12.8 12.8 0 1 0 16 3.2Zm0 23.2c-2 0-4-.6-5.7-1.7l-.4-.2-3.9.9.9-3.8-.3-.4A10.4 10.4 0 1 1 16 26.4Zm5.8-7.7c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-.9 1.1-.2.2-.3.2-.7.1-.3-.2-1.3-.5-2.5-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.7l.5-.6c.2-.2.2-.3.3-.5.1-.2.1-.4 0-.6 0-.2-.7-1.7-1-2.3-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.2-1.2 2.8 0 1.7 1.2 3.3 1.4 3.5.2.2 2.4 3.7 5.8 5.2.8.3 1.4.5 2 .7.8.3 1.5.2 2 .1.6-.1 1.9-.8 2.1-1.5.3-.7.3-1.4.2-1.5-.1-.1-.3-.2-.6-.4Z" />
+  </svg>
+</a>
+
 <footer class="site-footer">
   <div class="footer-inner">
-    <div class="footer-social">
-      <div class="social-links" aria-label="Social media links">
-        <a
-          class="social-link"
-          href="https://www.facebook.com/"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Local Service Co on Facebook"
-        >
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M13.5 21v-8h2.7l.4-3h-3.1V8.1c0-.9.3-1.6 1.6-1.6H16.7V3.8c-.3 0-1.4-.1-2.6-.1-2.6 0-4.3 1.6-4.3 4.5V10H7v3h2.8v8h3.7Z" />
-          </svg>
-          <span>Facebook</span>
-        </a>
-
-        <a
-          class="social-link"
-          href="https://www.instagram.com/"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Local Service Co on Instagram"
-        >
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M7.5 3h9A4.5 4.5 0 0 1 21 7.5v9a4.5 4.5 0 0 1-4.5 4.5h-9A4.5 4.5 0 0 1 3 16.5v-9A4.5 4.5 0 0 1 7.5 3Zm0 1.8A2.7 2.7 0 0 0 4.8 7.5v9a2.7 2.7 0 0 0 2.7 2.7h9a2.7 2.7 0 0 0 2.7-2.7v-9a2.7 2.7 0 0 0-2.7-2.7h-9Zm9.45 1.35a1.05 1.05 0 1 1 0 2.1 1.05 1.05 0 0 1 0-2.1ZM12 7.5A4.5 4.5 0 1 1 7.5 12 4.5 4.5 0 0 1 12 7.5Zm0 1.8A2.7 2.7 0 1 0 14.7 12 2.7 2.7 0 0 0 12 9.3Z" />
-          </svg>
-          <span>Instagram</span>
-        </a>
-
-        <a
-          class="social-link"
-          href="https://www.linkedin.com/"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Local Service Co on LinkedIn"
-        >
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M6.1 8.7H2.8V21h3.3V8.7ZM4.4 3A1.9 1.9 0 1 0 4.4 6.8 1.9 1.9 0 0 0 4.4 3Zm5 5.7H12.6v1.7h.1c.4-.8 1.5-2 3.2-2 3.4 0 4.1 2.2 4.1 5.2V21h-3.3v-6.5c0-1.6 0-3.5-2.1-3.5s-2.5 1.7-2.5 3.4V21H9.4V8.7Z" />
-          </svg>
-          <span>LinkedIn</span>
-        </a>
-      </div>
-    </div>
-
     <div class="footer-meta">
-      <span>&copy; {{ currentYear }} Local Service Co</span>
+      <span>&copy; {{ currentYear }} Del Sol HVAC LLC</span>
     </div>
   </div>
 </footer>

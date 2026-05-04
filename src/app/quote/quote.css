@@ -44,7 +44,7 @@
   padding: 15px 16px;
   border-radius: 20px;
   background: linear-gradient(180deg, color-mix(in srgb, var(--surface-accent) 82%, transparent), var(--surface-strong));
-  border: 1px solid rgba(31, 95, 174, 0.14);
+  border: 1px solid rgba(var(--brand-blue-rgb), 0.14);
 }
 
 [data-theme="dark"] .highlight-card {
@@ -96,7 +96,7 @@
   content: "";
   flex: 1;
   height: 1px;
-  background: rgba(23, 50, 77, 0.12);
+  background: rgba(var(--brand-blue-dark-rgb), 0.12);
 }
 
 .quote-form {
@@ -111,7 +111,7 @@
   padding: 1rem;
   border-radius: 24px;
   background: color-mix(in srgb, var(--surface) 72%, transparent);
-  border: 1px solid rgba(23, 50, 77, 0.08);
+  border: 1px solid rgba(var(--brand-blue-dark-rgb), 0.08);
 }
 
 .section-label {
@@ -228,7 +228,7 @@
   padding: 1rem;
   border-radius: 24px;
   background: linear-gradient(180deg, color-mix(in srgb, var(--surface-accent) 76%, transparent), var(--surface-strong));
-  border: 1px solid rgba(31, 95, 174, 0.14);
+  border: 1px solid rgba(var(--brand-blue-rgb), 0.14);
 }
 
 .submit-note {
@@ -246,7 +246,7 @@
   font-size: clamp(1rem, 2.1vw, 1.15rem);
   font-weight: 800;
   color: #fff;
-  background: var(--primary);
+  background: var(--action-bg);
   border: 1px solid var(--primary);
   cursor: pointer;
   transition: filter 150ms ease, transform 150ms ease, box-shadow 150ms ease;
@@ -295,7 +295,7 @@
   border-radius: 999px;
   background: color-mix(in srgb, var(--surface-accent) 68%, transparent);
   color: var(--text);
-  border: 1px solid rgba(31, 95, 174, 0.12);
+  border: 1px solid rgba(var(--brand-blue-rgb), 0.12);
 }
 
 .trust-row mat-icon {

@@ -1,40 +1,43 @@
 <div class="page-container">
   <mat-card class="about-card">
-    <div class="eyebrow">About Local Service Co</div>
-    <h1>Reliable make ready support built for property managers under pressure.</h1>
+    <div class="eyebrow">{{ language.current() === 'es' ? 'Sobre Del Sol HVAC LLC' : 'About Del Sol HVAC LLC' }}</div>
+    <h1>{{ language.current() === 'es' ? 'Servicio HVAC confiable enfocado en enfriamiento, confort y confianza.' : 'Reliable HVAC support built around cooling, comfort, and reliability.' }}</h1>
     <p class="intro">
-      Local service customers lose time when projects drag out, communication is unclear, or vendors need constant follow-up. Local Service Co exists to remove that friction.
+      {{ language.current() === 'es'
+        ? 'Los problemas HVAC son estresantes cuando la comunicacion no es clara o el servicio es dificil de coordinar. Del Sol HVAC LLC existe para simplificar el proximo paso.'
+        : 'HVAC issues are stressful when communication is unclear or service is hard to schedule. Del Sol HVAC LLC exists to make the next step simple.' }}
     </p>
 
     <div class="about-grid">
       <section class="story-block">
-        <h2>What we do</h2>
+        <h2>{{ language.current() === 'es' ? 'Que hacemos' : 'What we do' }}</h2>
         <p>
-          We help multifamily teams move units from vacant to move-in ready with
-          dependable service, responsive communication, and a strong sense of urgency.
+          {{ language.current() === 'es'
+            ? 'Ayudamos a hogares y negocios con instalacion de A/C, reparacion, mantenimiento preventivo y servicio HVAC confiable.'
+            : 'We help homeowners and businesses with A/C installation, repair, preventive maintenance, and dependable HVAC service.' }}
         </p>
         <p>
-          Our work is built around what matters most to property managers:
-          protecting occupancy, reducing vacancy loss, and giving residents a
-          better move-in experience.
+          {{ language.current() === 'es'
+            ? 'Nuestro trabajo se enfoca en lo que mas importa: restaurar el confort, proteger el sistema y mantener el servicio claro desde el primer contacto hasta completar el trabajo.'
+            : 'Our work is built around what matters most to customers: restoring comfort, protecting the system, and keeping service clear from the first call through completion.' }}
         </p>
       </section>
 
       <section class="story-block emphasis">
-        <h2>Why teams keep us close</h2>
+        <h2>{{ language.current() === 'es' ? 'Por que nos eligen' : 'Why customers choose us' }}</h2>
         <ul class="pill-list">
-          <li>Fast turnaround focused on occupancy</li>
-          <li>Honest quotes and clearer expectations</li>
-          <li>24/7 outsourcing support for demanding schedules</li>
-          <li>Experience with real property-management workflows</li>
+          <li>{{ language.current() === 'es' ? 'Instalacion y reparacion de A/C' : 'A/C installation and repair support' }}</li>
+          <li>{{ language.current() === 'es' ? 'Cotizaciones honestas y expectativas claras' : 'Honest quotes and clearer expectations' }}</li>
+          <li>{{ language.current() === 'es' ? 'Mantenimiento preventivo para mayor confiabilidad' : 'Preventive maintenance for reliability' }}</li>
+          <li>{{ language.current() === 'es' ? 'Servicio HVAC residencial y comercial' : 'Residential and commercial HVAC service' }}</li>
         </ul>
       </section>
     </div>
 
     <div class="about-cta">
-      <a mat-button routerLink="/">Back to Home</a>
+      <a mat-button routerLink="/">{{ language.current() === 'es' ? 'Volver al inicio' : 'Back to Home' }}</a>
       <a class="primary-cta" mat-flat-button routerLink="/contact">
-        Talk With Our Team
+        {{ language.current() === 'es' ? 'Contactar al equipo' : 'Talk With Our Team' }}
       </a>
     </div>
   </mat-card>

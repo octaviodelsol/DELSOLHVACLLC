@@ -5,11 +5,11 @@
         <p class="section-kicker">Google Reviews</p>
         @if (status === "loaded" && reviewsData) {
           <p class="rating-headline">5.0 Rating on Google</p>
-          <h2 id="google-reviews-title">Trusted by property managers for fast, reliable service.</h2>
+          <h2 id="google-reviews-title">Trusted by customers for fast, reliable HVAC service.</h2>
           <p>See a few of the strongest comments about speed, reliability, and results from Google reviews.</p>
         } @else {
-          <h2 id="google-reviews-title">Trusted by property managers for fast, reliable service.</h2>
-          <p>Recent Google feedback helps reinforce the speed and professionalism teams can expect.</p>
+          <h2 id="google-reviews-title">Trusted by customers for fast, reliable HVAC service.</h2>
+          <p>Recent Google feedback helps reinforce the speed and professionalism customers can expect.</p>
         }
       </div>
     </div>
@@ -73,7 +73,7 @@
           <mat-icon aria-hidden="true">open_in_new</mat-icon>
         </a>
         <a mat-flat-button class="primary-btn" routerLink="/get-a-quote">
-          Get Your Unit Turn Quote
+          Request HVAC Service
         </a>
       </div>
     } @else if (status === "empty") {

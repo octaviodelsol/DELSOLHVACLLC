@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { RouterLink } from '@angular/router';
+import { LanguageService } from '../language.service';
 
 @Component({
   selector: 'app-about',
@@ -15,4 +16,5 @@ import { RouterLink } from '@angular/router';
   styleUrls: ['./about.component.css']
 })
 export class AboutComponent {
+  constructor(readonly language: LanguageService) {}
 }

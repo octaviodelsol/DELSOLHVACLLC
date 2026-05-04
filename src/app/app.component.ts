@@ -3,6 +3,7 @@ import { DOCUMENT } from '@angular/common';
 import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { LanguageService, SiteLanguage } from './language.service';
 
 @Component({
   selector: 'app-root',
@@ -23,7 +24,10 @@ export class AppComponent {
   isDarkMode = false;
   readonly currentYear = new Date().getFullYear();
 
-  constructor(@Inject(DOCUMENT) private readonly document: Document) {
+  constructor(
+    @Inject(DOCUMENT) private readonly document: Document,
+    readonly language: LanguageService,
+  ) {
     this.initializeTheme();
   }
 
@@ -39,6 +43,10 @@ export class AppComponent {
     this.isDarkMode = !this.isDarkMode;
     this.applyTheme();
     localStorage.setItem('theme-preference', this.isDarkMode ? 'dark' : 'light');
+  }
+
+  setLanguage(language: SiteLanguage): void {
+    this.language.setLanguage(language);
   }
 
   private initializeTheme(): void {

@@ -60,7 +60,7 @@
               "buildTarget": "delsolhvacllc:build:production"
             },
             "development": {
-              "buildTarget": "local-service-site-template:build:development"
+              "buildTarget": "delsolhvacllc:build:development"
             }
           },
           "defaultConfiguration": "development"

@@ -48,7 +48,7 @@
   padding: 22px 20px;
   border-radius: 24px;
   background: linear-gradient(180deg, var(--surface-strong), color-mix(in srgb, var(--surface-muted) 82%, transparent));
-  border: 1px solid rgba(23, 50, 77, 0.1);
+  border: 1px solid rgba(var(--brand-blue-dark-rgb), 0.1);
 }
 
 .service-card h2 {
@@ -73,7 +73,7 @@
   min-height: 48px;
   border-radius: 999px !important;
   padding-inline: 22px !important;
-  background: var(--primary) !important;
+  background: var(--action-bg) !important;
   color: #fff !important;
   box-shadow: var(--shadow-md);
 }

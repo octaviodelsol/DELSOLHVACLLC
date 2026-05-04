@@ -88,7 +88,7 @@
 }
 
 .primary-btn {
-  background: var(--primary) !important;
+  background: var(--action-bg) !important;
   color: #fff !important;
   box-shadow: var(--shadow-md);
   display: inline-flex !important;
@@ -105,7 +105,7 @@
 }
 
 .secondary-btn {
-  border-color: rgba(31, 95, 174, 0.22) !important;
+  border-color: rgba(var(--brand-blue-rgb), 0.22) !important;
   color: var(--primary-dark) !important;
   background: color-mix(in srgb, var(--surface) 68%, transparent);
   padding-inline: 22px !important;
@@ -235,7 +235,7 @@
   padding: 16px 18px;
   border-radius: 22px;
   background: linear-gradient(180deg, color-mix(in srgb, var(--surface-accent) 82%, transparent), var(--surface-strong));
-  border: 1px solid rgba(23, 50, 77, 0.08);
+  border: 1px solid rgba(var(--brand-blue-dark-rgb), 0.08);
 }
 
 .hero-contact-row {
@@ -243,7 +243,7 @@
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 0;
-  border-top: 1px solid rgba(23, 50, 77, 0.08);
+  border-top: 1px solid rgba(var(--brand-blue-dark-rgb), 0.08);
   padding-top: 14px;
 }
 
@@ -258,7 +258,7 @@
 .hero-mini-card:last-child {
   padding-right: 0;
   padding-left: 14px;
-  border-left: 1px solid rgba(23, 50, 77, 0.08);
+  border-left: 1px solid rgba(var(--brand-blue-dark-rgb), 0.08);
 }
 
 .hero-mini-card mat-icon {
@@ -578,7 +578,7 @@
   align-items: center;
   gap: 14px;
   padding: 18px 12px;
-  border-bottom: 1px solid rgba(23, 50, 77, 0.08);
+  border-bottom: 1px solid rgba(var(--brand-blue-dark-rgb), 0.08);
   color: var(--text);
   font-weight: 600;
 }
@@ -604,13 +604,45 @@
   align-items: center;
   justify-content: space-between;
   gap: 24px;
-  padding: 28px 32px;
-  border-radius: var(--radius-lg);
+  padding: 22px 24px;
+  border-radius: 24px;
 }
 
 .final-cta .primary-btn {
   min-width: 196px;
   white-space: nowrap;
+}
+
+.final-cta h2 {
+  margin: 8px 0 8px;
+  font-size: clamp(1.45rem, 2.6vw, 2.05rem);
+  line-height: 1.12;
+  letter-spacing: -0.03em;
+}
+
+.final-cta p:not(.section-kicker) {
+  max-width: 60ch;
+  font-size: 0.98rem;
+  line-height: 1.55;
+}
+
+.whatsapp-cta-btn {
+  --mdc-filled-button-container-color: #25d366;
+  --mdc-filled-button-label-text-color: #fff;
+  --mat-button-protected-container-color: #25d366;
+  --mat-button-protected-label-text-color: #fff;
+  min-height: 48px;
+  border-radius: 999px !important;
+  padding-inline: 20px !important;
+  background: #25d366 !important;
+  color: #fff !important;
+  font-weight: 800;
+  white-space: nowrap;
+  box-shadow: 0 12px 26px rgba(18, 140, 126, 0.26);
+}
+
+.whatsapp-cta-btn mat-icon {
+  margin-right: 8px;
 }
 
 @keyframes fade-up {
@@ -722,7 +754,7 @@
   }
 
   .hero-mini-card:last-child {
-    border-top: 1px solid rgba(23, 50, 77, 0.08);
+    border-top: 1px solid rgba(var(--brand-blue-dark-rgb), 0.08);
     padding-top: 14px;
     margin-top: 14px;
   }
@@ -809,10 +841,14 @@
   }
 
   .section-heading h2,
-  .services-copy h2,
-  .final-cta h2 {
+  .services-copy h2 {
     font-size: clamp(1.52rem, 7vw, 2rem);
     line-height: 1.08;
+  }
+
+  .final-cta h2 {
+    font-size: clamp(1.32rem, 6vw, 1.7rem);
+    line-height: 1.12;
   }
 
   .proof-item {

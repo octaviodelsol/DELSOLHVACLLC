@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component } from "@angular/core";
 import { MatButtonModule } from "@angular/material/button";
 import { MatIconModule } from "@angular/material/icon";
 import { RouterLink } from "@angular/router";
-import { GoogleReviewsComponent } from "../google-reviews/google-reviews.component";
+import { LanguageService } from "../language.service";
 
 @Component({
   selector: "app-home",
@@ -11,114 +11,133 @@ import { GoogleReviewsComponent } from "../google-reviews/google-reviews.compone
     MatButtonModule,
     MatIconModule,
     RouterLink,
-    GoogleReviewsComponent,
   ],
   templateUrl: "./home.component.html",
   styleUrls: ["./home.component.css"],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HomeComponent {
-  readonly heroPoints = [
-    "Built for apartment communities and property managers",
-    "Fast support for vacant units and tight turn windows",
-    "Clear pricing, updates, and next steps",
-  ];
+  constructor(readonly language: LanguageService) {}
+
+  get heroPoints(): string[] {
+    return this.language.current() === 'es'
+      ? [
+          "Instalacion, reparacion y mantenimiento preventivo de A/C",
+          "Servicio HVAC residencial y comercial",
+          "Precios claros, comunicacion y proximos pasos",
+        ]
+      : [
+          "A/C installation, repair, and preventive maintenance",
+          "Residential and commercial HVAC support",
+          "Clear pricing, communication, and next steps",
+        ];
+  }
 
   readonly metrics = [
-    { value: "24/7", label: "support for busy property teams" },
-    { value: "Fast", label: "unit-turn help without vendor chasing" },
-    { value: "Clear", label: "communication from quote to completion" },
+    { value: "A/C", label: "installation and repair service" },
+    { value: "PM", label: "preventive maintenance support" },
+    { value: "R+C", label: "residential and commercial work" },
   ];
 
   readonly proofItems = [
     {
       icon: "schedule",
-      title: "Turn units faster",
-      description: "Keep vacant units moving toward make-ready and move-in without unnecessary delay.",
+      title: "Respond quickly",
+      description: "Get your A/C or HVAC concern moving toward a practical solution.",
     },
     {
       icon: "verified_user",
       title: "Know what is happening",
-      description: "Get clear scope, pricing, and next steps instead of chasing for updates.",
+      description: "Get clear scope, pricing, and next steps before work moves forward.",
     },
     {
       icon: "apartment",
-      title: "Built for multifamily teams",
-      description: "Designed around occupancy pressure, leasing deadlines, and property operations.",
+      title: "Homes and businesses",
+      description: "Support for residential comfort needs and commercial HVAC priorities.",
     },
     {
       icon: "support_agent",
       title: "Professional follow-through",
-      description: "Responsive service that helps your team look organized and in control.",
+      description: "Responsive service that helps you feel informed and in control.",
     },
   ];
 
   readonly trustStats = [
-    { value: "500+", label: "units supported across make-ready and turn services" },
-    { value: "24-48 hr", label: "typical response window for active turn needs" },
-    { value: "San Antonio", label: "service area for apartment communities and multifamily teams" },
+    { value: "5.0", label: "customer-rated service experience" },
+    { value: "786", label: "call 786-601-3264 for service" },
+    { value: "HVAC", label: "cooling, comfort, and reliability" },
   ];
 
   readonly benefits = [
     {
       icon: "bolt",
-      title: "Quick response when units open up",
-      description: "Move from vacancy to action faster with a team that is built around apartment turn timelines.",
+      title: "Quick response when comfort is on the line",
+      description: "Move from HVAC concern to action with a team focused on practical service.",
     },
     {
       icon: "chat",
-      title: "Fewer update requests from your office",
-      description: "Clear scope, communication, and next steps help your staff spend less time chasing vendors.",
+      title: "Clear communication from the start",
+      description: "Clear scope, communication, and next steps help you understand the work before it begins.",
     },
     {
       icon: "fact_check",
-      title: "Work that supports leasing readiness",
-      description: "Cleaner presentation and dependable follow-through help units show better and get back on the market sooner.",
+      title: "Work that supports long-term reliability",
+      description: "Preventive maintenance and dependable repairs help your HVAC system perform when you need it.",
     },
   ];
 
   readonly sectionPoints = [
-    "Cleaner units that are ready to show sooner",
-    "Clear updates without constant vendor follow-up",
-    "Reliable support during busy leasing windows",
+    "Comfort-focused service for homes and businesses",
+    "Clear updates without constant follow-up",
+    "Reliable support for urgent repairs and maintenance",
   ];
 
   readonly steps = [
     {
-      title: "Send the unit and service details",
+      title: "Send the system and service details",
       description:
-        "Tell us the property, the service needed, and your timeline through the quote form.",
+        "Tell us the property, the HVAC service needed, and your timeline through the quote form.",
     },
     {
-      title: "Review a clear quote",
+      title: "Review clear next steps",
       description:
         "We follow up with straightforward pricing, scope, and next steps.",
     },
     {
-      title: "Get the turn moving",
+      title: "Get the service moving",
       description:
-        "Our team handles the work so your staff can stay focused on leasing, residents, and operations.",
+        "Our team handles the work so you can get back to a comfortable, reliable space.",
     },
   ];
 
-  readonly services = [
-    { icon: "home_repair_service", label: "Full-service apartment make ready turns" },
-    { icon: "delete_sweep", label: "Trash out and bulk debris removal" },
-    { icon: "park", label: "Grounds cleanup and exterior presentation" },
-    { icon: "night_shelter", label: "Trash valet support for apartment communities" },
-    { icon: "local_shipping", label: "Appliance moving and setup support" },
-  ];
+  get services(): Array<{ icon: string; label: string }> {
+    return this.language.current() === 'es'
+      ? [
+          { icon: "ac_unit", label: "Instalacion y reemplazo de A/C" },
+          { icon: "build", label: "Reparacion y diagnostico de A/C" },
+          { icon: "event_repeat", label: "Mantenimiento preventivo" },
+          { icon: "home", label: "Servicio HVAC residencial" },
+          { icon: "business", label: "Servicio HVAC comercial" },
+        ]
+      : [
+          { icon: "ac_unit", label: "A/C installation and replacement" },
+          { icon: "build", label: "A/C repair and troubleshooting" },
+          { icon: "event_repeat", label: "Preventive maintenance" },
+          { icon: "home", label: "Residential HVAC service" },
+          { icon: "business", label: "Commercial HVAC service" },
+        ];
+  }
 
   readonly faqs = [
     {
-      question: "Who is Local Service Co for?",
+      question: "Who is Del Sol HVAC LLC for?",
       answer:
-        "We work with property managers, apartment communities, and multifamily teams that need vacant units turned quickly and professionally.",
+        "We work with homeowners and businesses that need A/C installation, repair, preventive maintenance, or reliable HVAC support.",
     },
     {
       question: "What makes your service different?",
       answer:
-        "We focus on speed, clear communication, and dependable follow-through so your team spends less time chasing vendors and more time getting units leased.",
+        "We focus on comfort, clear communication, and dependable follow-through so customers understand the service and next steps.",
     },
   ];
 }

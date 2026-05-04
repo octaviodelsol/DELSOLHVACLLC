@@ -55,7 +55,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 4px;
-  color: #f5b301;
+  color: var(--highlight);
 }
 
 .card-stars mat-icon {
@@ -144,7 +144,7 @@
 }
 
 .primary-btn {
-  background: var(--primary) !important;
+  background: var(--action-bg) !important;
   color: #fff !important;
   box-shadow: var(--shadow-md);
 }
@@ -157,7 +157,7 @@
 }
 
 .secondary-btn {
-  border-color: rgba(31, 95, 174, 0.22) !important;
+  border-color: rgba(var(--brand-blue-rgb), 0.22) !important;
   color: var(--primary-dark) !important;
   background: color-mix(in srgb, var(--surface) 68%, transparent);
 }
@@ -171,7 +171,7 @@
 
 .retry-btn {
   margin-top: 14px;
-  border-color: rgba(31, 95, 174, 0.22) !important;
+  border-color: rgba(var(--brand-blue-rgb), 0.22) !important;
   color: var(--primary-dark) !important;
 }
 

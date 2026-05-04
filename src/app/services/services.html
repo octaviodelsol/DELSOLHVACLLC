@@ -1,10 +1,12 @@
 <div class="page-container">
   <mat-card class="services-card">
     <div class="services-header">
-      <p class="eyebrow">Our services</p>
-      <h1 class="card-title">Turn support that helps your property look ready, faster.</h1>
+      <p class="eyebrow">{{ language.current() === 'es' ? 'Nuestros servicios' : 'Our services' }}</p>
+      <h1 class="card-title">{{ language.current() === 'es' ? 'Servicio HVAC para mantener su propiedad comoda.' : 'HVAC service that keeps your property comfortable.' }}</h1>
       <p class="card-subtitle">
-        Practical services for multifamily teams that need turns moving and units ready to show.
+        {{ language.current() === 'es'
+          ? 'Instalacion de A/C, reparacion, mantenimiento preventivo y soporte HVAC residencial y comercial.'
+          : 'Practical A/C installation, repair, preventive maintenance, and residential and commercial HVAC support.' }}
       </p>
     </div>
 
@@ -16,11 +18,12 @@
         </article>
       }
     </div>
-
+    <!-- Quote flow paused while service requests are handled through the floating WhatsApp button.
     <div class="services-cta">
       <a class="primary-cta" mat-flat-button routerLink="/get-a-quote">
         Get a Fast Quote
       </a>
     </div>
+    -->
   </mat-card>
 </div>

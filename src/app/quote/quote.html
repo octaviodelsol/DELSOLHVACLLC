@@ -3,7 +3,7 @@
     <div class="quote-hero">
       <div class="quote-copy">
         <p class="eyebrow">Request a quote</p>
-        <h1 class="card-title">Tell us about the turn. We will handle the follow-through.</h1>
+        <h1 class="card-title">Tell us about your HVAC need. We will handle the follow-through.</h1>
         <p class="card-subtitle">
           Share the property details, service type, and timeline. We will follow up with a clear quote and next steps.
         </p>
@@ -16,7 +16,7 @@
         </div>
         <div class="highlight-card">
           <strong>Fast response</strong>
-          <span>Built for busy property managers and time-sensitive turns.</span>
+          <span>Built for customers dealing with time-sensitive comfort issues.</span>
         </div>
         <div class="highlight-card">
           <strong>Reliable support</strong>
@@ -26,7 +26,7 @@
     </div>
 
     <div class="section-divider">
-      <span>Project Details</span>
+      <span>Service Details</span>
     </div>
 
     <form
@@ -46,7 +46,7 @@
       <div class="form-block">
         <div class="section-label">
           <span>Your contact info</span>
-          <p>Tell us who to reach and which property this request is for.</p>
+          <p>Tell us who to reach and where this HVAC request is for.</p>
         </div>
 
         <div class="form-grid">
@@ -62,7 +62,7 @@
             <mat-label>Company / Property Name</mat-label>
             <input matInput name="company" ngModel required minlength="2" />
             <mat-error *ngIf="(quoteForm.submitted || quoteForm.controls['company']?.touched) && quoteForm.controls['company']?.invalid">
-              Company is required
+              Company or property name is required
             </mat-error>
           </mat-form-field>
 
@@ -110,7 +110,7 @@
       <div class="form-block">
         <div class="section-label">
           <span>Project details</span>
-          <p>Help us understand the type of turn, unit, and urgency.</p>
+          <p>Help us understand the service, property type, and urgency.</p>
         </div>
 
         <div class="form-grid">
@@ -158,14 +158,14 @@
           -->
 
           <mat-form-field appearance="outline" class="grid-item">
-            <mat-label>Number of Bedrooms</mat-label>
+            <mat-label>System / Area Size</mat-label>
             <mat-select name="bedrooms" ngModel required>
               <mat-option *ngFor="let bedroom of bedroomOptions" [value]="bedroom">
                 {{ bedroom }}
               </mat-option>
             </mat-select>
             <mat-error *ngIf="(quoteForm.submitted || quoteForm.controls['bedrooms']?.touched) && quoteForm.controls['bedrooms']?.invalid">
-              Select number of bedrooms
+              Select system or area size
             </mat-error>
           </mat-form-field>
 
@@ -199,7 +199,7 @@
 
     <div class="trust-row">
       <span><mat-icon>check_circle</mat-icon>Honest pricing</span>
-      <span><mat-icon>check_circle</mat-icon>Fast turnaround</span>
+      <span><mat-icon>check_circle</mat-icon>Responsive service</span>
       <span><mat-icon>check_circle</mat-icon>Professional communication</span>
     </div>
   </mat-card>

@@ -34,19 +34,19 @@ export class Quote {
   // selectedPhotoCount = 0;
 
   serviceTypes: string[] = [
-    'Full-Service Project Support',
-    'Trash Out',
-    'Grounds',
-    'Appliance Moving',
-    'Maintenance',
+    'A/C Installation & Replacement',
+    'A/C Repair',
+    'Preventive Maintenance',
+    'Residential HVAC Service',
+    'Commercial HVAC Service',
     'Other'
   ];
 
-  bedroomOptions: string[] = ['Studio', '1', '2', '3', '4', '5+'];
+  bedroomOptions: string[] = ['Small Area', 'Single Room', '1 System', '2 Systems', '3+ Systems', 'Not Sure'];
 
   timelineOptions: string[] = [
-    'Standard Turn (3–5 Days)',
-    '48-Hour Turn',
+    'Standard Service',
+    '48-Hour Service',
     '24-Hour Rush',
     'Flexible Timeline',
     'Emergency Service'
@@ -56,7 +56,7 @@ export class Quote {
     'Single Family Home',
     'Apartment',
     'Condo / Townhome',
-    'Multi-Family',
+    'Multi-Family Property',
     'Commercial',
     'Other'
   ];
@@ -87,7 +87,7 @@ export class Quote {
           `Email: ${form.value.email}\n` +
           `Property Address: ${form.value.propertyAddress}\n` +
           `Service Type: ${form.value.serviceType}\n` +
-          `Bedrooms: ${form.value.bedrooms}\n` +
+          `System/Area Size: ${form.value.bedrooms}\n` +
           `Timeline/Urgency: ${form.value.timeline}\n` +
           `Property Type: ${form.value.propertyType}`
       },
