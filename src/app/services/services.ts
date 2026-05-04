@@ -1,12 +1,11 @@
 import { Component } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
-import { RouterLink } from '@angular/router';
 import { LanguageService } from '../language.service';
 
 @Component({
   selector: 'app-services',
-  imports: [MatCardModule, MatButtonModule, RouterLink],
+  imports: [MatCardModule, MatButtonModule],
   templateUrl: './services.html',
   styleUrl: './services.css',
 })
