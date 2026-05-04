@@ -1,0 +1,122 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap");
+
+:root {
+  color-scheme: light;
+  --bg: #f3f7fc;
+  --surface: #ffffff;
+  --surface-strong: rgba(255, 255, 255, 0.94);
+  --surface-soft: rgba(255, 255, 255, 0.88);
+  --surface-subtle: rgba(255, 255, 255, 0.74);
+  --surface-muted: #edf4ff;
+  --surface-accent: #dfeafc;
+  --surface-panel: #fbfcfb;
+  --field-bg: #ffffff;
+  --text: #17324d;
+  --text-muted: #5c738c;
+  --heading: #0f2238;
+  --line: rgba(23, 50, 77, 0.12);
+  --primary: #1f5fae;
+  --primary-dark: #174b8a;
+  --primary-soft: #e1edfd;
+  --accent: #4f92f6;
+  --shadow-lg: 0 24px 70px rgba(23, 50, 77, 0.12);
+  --shadow-md: 0 14px 34px rgba(23, 50, 77, 0.08);
+  --header-bg: rgba(249, 251, 255, 0.88);
+  --radius-lg: 28px;
+  --radius-md: 18px;
+  --radius-sm: 12px;
+  --content-width: 1180px;
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #09121e;
+  --surface: #0f1b2a;
+  --surface-strong: rgba(15, 27, 42, 0.92);
+  --surface-soft: rgba(15, 27, 42, 0.88);
+  --surface-subtle: rgba(19, 38, 60, 0.78);
+  --surface-muted: #13263c;
+  --surface-accent: #193455;
+  --surface-panel: #102031;
+  --field-bg: #13263c;
+  --text: #dce8f8;
+  --text-muted: #9db4cf;
+  --heading: #f4f8ff;
+  --line: rgba(157, 180, 207, 0.18);
+  --primary: #62a2ff;
+  --primary-dark: #3f85e6;
+  --primary-soft: rgba(98, 162, 255, 0.16);
+  --accent: #87bbff;
+  --shadow-lg: 0 24px 70px rgba(0, 0, 0, 0.34);
+  --shadow-md: 0 14px 34px rgba(0, 0, 0, 0.26);
+  --header-bg: rgba(9, 18, 30, 0.82);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  font-family: "Manrope", "Segoe UI", sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at top right, rgba(79, 146, 246, 0.18), transparent 24%),
+    linear-gradient(180deg, #f9fbff 0%, var(--bg) 100%);
+  -webkit-text-size-adjust: 100%;
+  transition: background-color 200ms ease, color 200ms ease, background 240ms ease;
+}
+
+[data-theme="dark"] body {
+  background:
+    radial-gradient(circle at top right, rgba(98, 162, 255, 0.18), transparent 26%),
+    linear-gradient(180deg, #0d1725 0%, var(--bg) 100%);
+}
+
+body .mat-typography,
+body button,
+body input,
+body select,
+body textarea {
+  font-family: "Manrope", "Segoe UI", sans-serif;
+}
+
+a {
+  color: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+button {
+  font: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+::selection {
+  background: rgba(31, 95, 174, 0.18);
+}
+
+:focus-visible {
+  outline: 3px solid rgba(31, 95, 174, 0.28);
+  outline-offset: 3px;
+}
