@@ -806,6 +806,11 @@
     line-height: 1.04;
   }
 
+  :host-context(html[lang='es']) .hero-copy h1 {
+    font-size: clamp(1.58rem, 7.8vw, 1.95rem);
+    line-height: 1.08;
+  }
+
   .primary-btn,
   .secondary-btn {
     min-height: 48px;
