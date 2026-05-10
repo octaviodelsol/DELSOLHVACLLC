@@ -94,6 +94,35 @@
 
 <footer class="site-footer">
   <div class="footer-inner">
+    <nav
+      class="footer-social"
+      [attr.aria-label]="language.current() === 'es' ? 'Redes sociales de Del Sol HVAC LLC' : 'Del Sol HVAC LLC social links'"
+    >
+      <a
+        href="https://www.youtube.com/@DELSOLHVACLLC"
+        target="_blank"
+        rel="noopener noreferrer"
+        [attr.aria-label]="language.current() === 'es' ? 'Del Sol HVAC LLC en YouTube' : 'Del Sol HVAC LLC on YouTube'"
+      >
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31.2 31.2 0 0 0 0 12a31.2 31.2 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31.2 31.2 0 0 0 24 12a31.2 31.2 0 0 0-.5-5.8ZM9.6 15.6V8.4l6.2 3.6-6.2 3.6Z" />
+        </svg>
+        <span>YouTube</span>
+      </a>
+
+      <a
+        href="https://www.instagram.com/hvacdelsol/"
+        target="_blank"
+        rel="noopener noreferrer"
+        [attr.aria-label]="language.current() === 'es' ? 'Del Sol HVAC LLC en Instagram' : 'Del Sol HVAC LLC on Instagram'"
+      >
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M7.8 2h8.4A5.8 5.8 0 0 1 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8A5.8 5.8 0 0 1 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2Zm0 2A3.8 3.8 0 0 0 4 7.8v8.4A3.8 3.8 0 0 0 7.8 20h8.4a3.8 3.8 0 0 0 3.8-3.8V7.8A3.8 3.8 0 0 0 16.2 4H7.8Zm4.2 3.2A4.8 4.8 0 1 1 7.2 12 4.8 4.8 0 0 1 12 7.2Zm0 2A2.8 2.8 0 1 0 14.8 12 2.8 2.8 0 0 0 12 9.2Zm5-2.3a1.1 1.1 0 1 1-1.1 1.1A1.1 1.1 0 0 1 17 6.9Z" />
+        </svg>
+        <span>Instagram</span>
+      </a>
+    </nav>
+
     <div class="footer-meta">
       <span>&copy; {{ currentYear }} Del Sol HVAC LLC</span>
     </div>
