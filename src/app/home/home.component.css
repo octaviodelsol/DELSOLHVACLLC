@@ -302,10 +302,6 @@
   border-color: rgba(255, 255, 255, 0.42) !important;
 }
 
-.sticky-call {
-  display: none;
-}
-
 @media (max-width: 960px) {
   .trust-bar,
   .service-grid,
@@ -321,7 +317,6 @@
 @media (max-width: 680px) {
   .home-page {
     gap: 16px;
-    padding-bottom: 92px;
   }
 
   .hero-section {
@@ -459,26 +454,6 @@
 
   .cta-section {
     display: grid;
-  }
-
-  .sticky-call {
-    position: fixed;
-    left: 16px;
-    right: 86px;
-    bottom: 16px;
-    z-index: 29;
-    min-height: 48px;
-    display: inline-flex;
-    gap: 8px;
-    align-items: center;
-    justify-content: center;
-    border-radius: 999px;
-    background: var(--action-bg);
-    color: #fff;
-    font-weight: 900;
-    font-size: 0.94rem;
-    text-decoration: none;
-    box-shadow: 0 18px 38px rgba(var(--brand-blue-dark-rgb), 0.24);
   }
 }
 
